@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script charset="utf-8" src="js/app.js"></script>
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+    <h1>Welcome to Expense Tracker Application</h1>
+    <script>
+        fetch('http://localhost:8080/api/users/login',{
+            method:'POST',
+            headers: {
+             'Content-Type': 'application/json',
+            },
+            body:JSON.stringify({
+            "email": "abhishekhandacse@gmail.com",
+            "password": "abhishek"
+            })
+            // headers:{'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDgwMjgzNjAsImV4cCI6MTYwODAzNTU2MCwidXNlcklkIjo5LCJlbWFpbCI6ImFiaGlzaGVraGFuZGFjc2VAZ21haWwuY29tIiwiZmlyc3ROYW1lIjoiYWJoaXNoZWsiLCJsYXN0TmFtZSI6ImhhbmRhIn0.W1GzM9NmhOKgHtrjQXMRGnFqLWoWQmXMPQkCmbtXhik'}
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.error(err));
+    </script>
+</body>
+</html>
